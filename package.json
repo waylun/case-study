@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "check": "npm run lint && npm run test:headless && npm run e2e",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test:headless": "ng test --watch=false --browsers ChromeHeadlessNoSandbox",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "npm run check && ng build --output-path docs --base-href /case-study/"
   },
   "private": true,
   "dependencies": {
@@ -19,8 +22,10 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "prettier": "^2.3.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "tslint-plugin-prettier": "^2.3.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
