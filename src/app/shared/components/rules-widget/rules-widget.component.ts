@@ -16,7 +16,6 @@ export class RulesWidgetComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
   pagesData = [];
   segmentsData = [];
-  hasCustom = false;
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {}
